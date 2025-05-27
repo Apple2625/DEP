@@ -87,7 +87,7 @@ def main():
     # training and validating
     start_time = time.time()
     for epoch in range(start_epoch, args.epochs):
-        train_loss, train_acc = tra(model=net, dataset=args.dataset, data=train_data_loader, time_step=args.T, epoch=epoch, optimizer=optimizer, lr_scheduler=lr_scheduler, scaler=scaler, loss_lambda=args.loss_lambda, sl=args.sl, attacker=attacker, writer=writer)
+        train_loss, train_acc = tra(model=net, dataset=args.dataset, data=train_data_loader, time_step=args.T, epoch=epoch, optimizer=optimizer, lr_scheduler=lr_scheduler, scaler=scaler, loss_lambda=args.loss_lambda, attacker=attacker, writer=writer)
         val_loss, val_acc = val(model=net, dataset=args.dataset, data=test_data_loader, time_step=args.T, epoch=epoch, optimizer=optimizer, lr_scheduler=lr_scheduler, scaler=scaler, loss_lambda=args.loss_lambda, attacker=attacker, writer=writer)
 
         save_max = False
